@@ -42,8 +42,8 @@
             border-color: rgba(99, 102, 241, 0.35);
         }
         ::-webkit-scrollbar {
-            width: 4px;
-            height: 4px;
+            width: 5px;
+            height: 5px;
         }
         ::-webkit-scrollbar-track {
             background: rgba(15, 23, 42, 0.5);
@@ -93,7 +93,7 @@
             </div>
 
             <!-- Tombol Input Data Rekan Kerja -->
-            <button onclick="openInputModal()" class="flex items-center gap-1 bg-indigo-600/90 hover:bg-indigo-600 text-white px-2.5 py-1.5 rounded-lg text-[11px] font-bold shadow-md transition-all border border-indigo-500/40">
+            <button onclick="openInputModal()" class="flex items-center gap-1.5 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg shadow-indigo-600/30 transition-all border border-indigo-400/40">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                 <span>Input Data</span>
             </button>
@@ -452,120 +452,217 @@
 
     </section>
 
-    <!-- ================= 4. MODAL INPUT DATA REKAN KERJA ================= -->
-    <div id="inputModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-3">
-        <div class="bg-slate-900 border border-slate-700/80 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl">
+    <!-- ================= 4. MODAL INPUT DATA REKAN KERJA LENGKAP (FULL ADMIN SUITE) ================= -->
+    <div id="inputModal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-2 sm:p-4">
+        <div class="bg-slate-900 border border-slate-700/80 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
             <!-- Modal Header -->
-            <div class="flex items-center justify-between p-4 border-b border-slate-800">
-                <div class="flex items-center gap-2">
-                    <span class="p-2 rounded-lg bg-indigo-500/20 text-indigo-400">
+            <div class="flex items-center justify-between px-5 py-3.5 border-b border-slate-800 bg-slate-900/90 shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-                    </span>
+                    </div>
                     <div>
-                        <h3 class="font-bold text-base text-white">Input & Update Data Monitoring</h3>
-                        <p class="text-xs text-slate-400">Perubahan langsung tersimpan di layar dan data JSON</p>
+                        <h3 class="font-bold text-sm sm:text-base text-white">Pembaruan & Input Data Monitoring GS MTBU</h3>
+                        <p class="text-[11px] text-slate-400">Formulir lengkap manajemen biaya, metrik armada, dan isu operasional</p>
                     </div>
                 </div>
-                <button onclick="closeInputModal()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+
+                <div class="flex items-center gap-3">
+                    <div class="flex items-center bg-slate-800/80 border border-slate-700 rounded-lg px-2.5 py-1 text-xs">
+                        <span class="text-slate-400 mr-1.5 font-medium">Tanggal:</span>
+                        <input type="date" id="modalDate" onchange="onModalDateChange()" class="bg-transparent text-white font-mono-num font-bold focus:outline-none cursor-pointer">
+                    </div>
+                    <button onclick="closeInputModal()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Navigation Bar -->
+            <div class="flex items-center gap-1 px-4 pt-2 border-b border-slate-800 bg-slate-950/50 shrink-0 overflow-x-auto text-xs font-semibold">
+                <button onclick="switchTab('tab-cost')" id="tab-btn-cost" class="tab-btn px-3 py-2 rounded-t-lg border-b-2 border-indigo-500 text-indigo-400 bg-slate-800/60 flex items-center gap-1.5">
+                    <span>💰 Realisasi Cost (Biaya)</span>
+                </button>
+                <button onclick="switchTab('tab-transport')" id="tab-btn-transport" class="tab-btn px-3 py-2 rounded-t-lg border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center gap-1.5">
+                    <span>🚗 Metrik Transport</span>
+                </button>
+                <button onclick="switchTab('tab-dorcat')" id="tab-btn-dorcat" class="tab-btn px-3 py-2 rounded-t-lg border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center gap-1.5">
+                    <span>🛏️ Dormitory & Catering (<span id="modal-dorcat-count">0</span> Isu)</span>
+                </button>
+                <button onclick="switchTab('tab-hotissue')" id="tab-btn-hotissue" class="tab-btn px-3 py-2 rounded-t-lg border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center gap-1.5">
+                    <span>⚡ Hot Issue MEP & Sipil</span>
                 </button>
             </div>
 
-            <!-- Modal Body (Tabs & Form) -->
-            <div class="p-4 overflow-y-auto flex-1 space-y-4 text-xs">
-                <div>
-                    <label class="block font-semibold text-slate-300 mb-1">Tanggal Data yang Diedit:</label>
-                    <input type="date" id="modalDate" class="bg-slate-800 border border-slate-700 text-white rounded-lg px-3 py-1.5 w-full font-mono-num">
-                </div>
+            <!-- Modal Content (Tab Panels) -->
+            <div class="p-4 sm:p-5 overflow-y-auto flex-1 text-xs space-y-4">
 
-                <!-- Bagian Transport -->
-                <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-3 space-y-2">
-                    <h4 class="font-bold text-sm text-cyan-400 flex items-center gap-1.5">
-                        <span>🚗 Metrik Transport</span>
-                    </h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                        <div>
-                            <label class="text-slate-300">PA Bus (%):</label>
-                            <input type="number" step="0.1" id="m_pa_bus" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
-                        </div>
-                        <div>
-                            <label class="text-slate-300">PA LV (%):</label>
-                            <input type="number" step="0.1" id="m_pa_lv" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
-                        </div>
-                        <div>
-                            <label class="text-slate-300">Coverage (%):</label>
-                            <input type="number" step="0.1" id="m_cov" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
-                        </div>
-                        <div>
-                            <label class="text-slate-300">Fuel Rasio Bus (km/l):</label>
-                            <input type="number" step="0.01" id="m_fr_bus" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
-                        </div>
-                        <div>
-                            <label class="text-slate-300">Fuel Rasio LV (km/l):</label>
-                            <input type="number" step="0.01" id="m_fr_lv" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
-                        </div>
-                        <div>
-                            <label class="text-slate-300">Ready LV (Unit):</label>
-                            <input type="number" id="m_ready_lv" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
-                        </div>
+                <!-- ================= TAB 1: REALISASI COST ================= -->
+                <div id="tab-cost" class="tab-panel space-y-3">
+                    <div class="flex items-center justify-between pb-1 border-b border-slate-800">
+                        <span class="text-slate-400">Atur Angka Budget Plan dan Realisasi Aktual (Rp) per kategori:</span>
+                        <span class="text-slate-500 italic text-[11px]">*Sisa budget akan otomatis dihitung</span>
                     </div>
-                    <div>
-                        <label class="text-slate-300">Hot Issue Transport:</label>
-                        <input type="text" id="m_notes_transport" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
+
+                    <div id="modal-cost-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <!-- Populated by JS for all 5 categories -->
                     </div>
                 </div>
 
-                <!-- Bagian Hot Issue MEP & Building -->
-                <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-3 space-y-2">
-                    <h4 class="font-bold text-sm text-purple-400">⚡ Hot Issue MEP & Sipil</h4>
-                    <div>
-                        <label class="text-slate-300">Hot Issue MEP & Instrument:</label>
-                        <textarea id="m_mep_issue" rows="2" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5"></textarea>
+                <!-- ================= TAB 2: METRIK TRANSPORT ================= -->
+                <div id="tab-transport" class="tab-panel hidden space-y-4">
+                    <!-- Metrik Persentase & Fuel Rasio -->
+                    <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-3.5 space-y-3">
+                        <h4 class="font-bold text-sm text-cyan-400 flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                            <span>Metrik Utama & Efisiensi Bahan Bakar</span>
+                        </h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div>
+                                <div class="flex items-center justify-between text-slate-300 font-semibold mb-1">
+                                    <span>PA Bus (%):</span>
+                                    <span class="text-emerald-400 text-[10px]">Target 99%</span>
+                                </div>
+                                <input type="number" step="0.01" min="0" max="100" id="m_pa_bus" class="w-full bg-slate-900 border border-slate-700 text-emerald-400 font-mono-num font-bold rounded-lg p-2 text-sm focus:border-emerald-500 focus:outline-none">
+                            </div>
+
+                            <div>
+                                <div class="flex items-center justify-between text-slate-300 font-semibold mb-1">
+                                    <span>PA LV (%):</span>
+                                    <span class="text-cyan-400 text-[10px]">Target 98%</span>
+                                </div>
+                                <input type="number" step="0.01" min="0" max="100" id="m_pa_lv" class="w-full bg-slate-900 border border-slate-700 text-cyan-400 font-mono-num font-bold rounded-lg p-2 text-sm focus:border-cyan-500 focus:outline-none">
+                            </div>
+
+                            <div>
+                                <div class="flex items-center justify-between text-slate-300 font-semibold mb-1">
+                                    <span>Coverage (%):</span>
+                                    <span class="text-purple-400 text-[10px]">Target 100%</span>
+                                </div>
+                                <input type="number" step="0.01" min="0" max="100" id="m_cov" class="w-full bg-slate-900 border border-slate-700 text-purple-400 font-mono-num font-bold rounded-lg p-2 text-sm focus:border-purple-500 focus:outline-none">
+                            </div>
+
+                            <div>
+                                <div class="flex items-center justify-between text-slate-300 font-semibold mb-1">
+                                    <span>Fuel Rasio Bus (km/l):</span>
+                                    <span class="text-amber-400 text-[10px]">&ge; 3,5 km/l</span>
+                                </div>
+                                <input type="number" step="0.01" min="0" id="m_fr_bus" class="w-full bg-slate-900 border border-slate-700 text-amber-400 font-mono-num font-bold rounded-lg p-2 text-sm focus:border-amber-500 focus:outline-none">
+                            </div>
+
+                            <div>
+                                <div class="flex items-center justify-between text-slate-300 font-semibold mb-1">
+                                    <span>Fuel Rasio LV (km/l):</span>
+                                    <span class="text-cyan-400 text-[10px]">&ge; 7,0 km/l</span>
+                                </div>
+                                <input type="number" step="0.01" min="0" id="m_fr_lv" class="w-full bg-slate-900 border border-slate-700 text-cyan-400 font-mono-num font-bold rounded-lg p-2 text-sm focus:border-cyan-500 focus:outline-none">
+                            </div>
+
+                            <div>
+                                <div class="flex items-center justify-between text-slate-300 font-semibold mb-1">
+                                    <span>ATR LV (%):</span>
+                                    <span class="text-slate-400 text-[10px]">Asset Turn Around</span>
+                                </div>
+                                <input type="number" step="0.01" min="0" max="100" id="m_atr_lv" class="w-full bg-slate-900 border border-slate-700 text-slate-200 font-mono-num font-bold rounded-lg p-2 text-sm focus:border-slate-500 focus:outline-none">
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label class="text-slate-300">Hot Issue Building Const:</label>
-                        <textarea id="m_sipil_issue" rows="2" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5"></textarea>
+
+                    <!-- Ketersediaan Fisik Armada (Ready & Breakdown) -->
+                    <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-3.5 space-y-3">
+                        <h4 class="font-bold text-sm text-emerald-400 flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                            <span>Ketersediaan Jumlah Unit (Ready & Breakdown)</span>
+                        </h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div>
+                                <label class="block text-slate-300 font-semibold mb-1">Ready LV (Unit):</label>
+                                <input type="number" min="0" id="m_ready_lv" class="w-full bg-slate-900 border border-slate-700 text-cyan-400 font-mono-num font-bold rounded-lg p-2 text-sm focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-slate-300 font-semibold mb-1">Breakdown LV (Unit):</label>
+                                <input type="number" min="0" id="m_breakdown_lv" class="w-full bg-slate-900 border border-slate-700 text-rose-400 font-mono-num font-bold rounded-lg p-2 text-sm focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-slate-300 font-semibold mb-1">Ready Bus (Unit):</label>
+                                <input type="number" min="0" id="m_ready_bus" class="w-full bg-slate-900 border border-slate-700 text-emerald-400 font-mono-num font-bold rounded-lg p-2 text-sm focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-slate-300 font-semibold mb-1">Breakdown Bus (Unit):</label>
+                                <input type="number" min="0" id="m_breakdown_bus" class="w-full bg-slate-900 border border-slate-700 text-rose-400 font-mono-num font-bold rounded-lg p-2 text-sm focus:outline-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hot Issue Transport -->
+                    <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-3.5 space-y-2">
+                        <label class="block text-slate-300 font-bold">Catatan Operasional / Hot Issue Transport:</label>
+                        <input type="text" id="m_notes_transport" placeholder="Contoh: Armada siap operasional penuh, 1 unit LV sedang perbaikan kopling..." class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg p-2 text-xs focus:border-blue-500 focus:outline-none">
                     </div>
                 </div>
 
-                <!-- Bagian Realisasi Cost Singkat -->
-                <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-3 space-y-2">
-                    <h4 class="font-bold text-sm text-amber-400">💰 Aktual Realisasi Biaya (Rp)</h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <!-- ================= TAB 3: DORMITORY & CATERING ================= -->
+                <div id="tab-dorcat" class="tab-panel hidden space-y-3">
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-800">
                         <div>
-                            <label class="text-slate-300">Cost Tiket - 2351:</label>
-                            <input type="number" id="m_cost_tiket" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
+                            <h4 class="font-bold text-sm text-amber-400">Daftar Isu Kritis (Hot Issues) Dormitory & Catering</h4>
+                            <p class="text-[11px] text-slate-400">Kelola tiket masalah, persentase progres, dan tingkat prioritas</p>
                         </div>
-                        <div>
-                            <label class="text-slate-300">Cost NPE - 2402:</label>
-                            <input type="number" id="m_cost_npe" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
-                        </div>
-                        <div>
-                            <label class="text-slate-300">Office Expense - 2403:</label>
-                            <input type="number" id="m_cost_office" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
-                        </div>
-                        <div>
-                            <label class="text-slate-300">Mess Expense - 2405:</label>
-                            <input type="number" id="m_cost_mess" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
-                        </div>
-                        <div class="sm:col-span-2">
-                            <label class="text-slate-300">Cost Building Maint - 2410:</label>
-                            <input type="number" id="m_cost_building" class="bg-slate-900 border border-slate-700 text-white rounded p-1.5 w-full mt-0.5">
-                        </div>
+                        <button onclick="addDorcatIssueRow()" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 shadow transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <span>+ Tambah Isu Baru</span>
+                        </button>
+                    </div>
+
+                    <!-- List of Issues in dynamic form -->
+                    <div id="modal-dorcat-list" class="space-y-2.5">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
+
+                <!-- ================= TAB 4: HOT ISSUE MEP & SIPIL ================= -->
+                <div id="tab-hotissue" class="tab-panel hidden space-y-4">
+                    <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-4 space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="p-1.5 rounded-lg bg-purple-500/20 text-purple-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </span>
+                            <h4 class="font-bold text-sm text-purple-300">Hot Issue MEP & Instrument</h4>
+                        </div>
+                        <textarea id="m_mep_issue" rows="3" placeholder="Tuliskan kendala kritis MEP & Instrument hari ini..." class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg p-2.5 text-xs focus:border-purple-500 focus:outline-none leading-relaxed"></textarea>
+                    </div>
+
+                    <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-4 space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                            </span>
+                            <h4 class="font-bold text-sm text-emerald-300">Hot Issue Building Const</h4>
+                        </div>
+                        <textarea id="m_sipil_issue" rows="3" placeholder="Tuliskan kendala kritis pekerjaan sipil / bangunan hari ini..." class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg p-2.5 text-xs focus:border-emerald-500 focus:outline-none leading-relaxed"></textarea>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Modal Footer -->
-            <div class="flex items-center justify-between p-4 border-t border-slate-800 bg-slate-900/90">
-                <button onclick="downloadJsonFile()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs flex items-center gap-1 border border-slate-700">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                    <span>Unduh File JSON</span>
-                </button>
-                <div class="flex gap-2">
-                    <button onclick="closeInputModal()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs">Batal</button>
-                    <button onclick="saveModalData()" class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 font-bold text-white text-xs shadow-lg shadow-emerald-600/30">
-                        Simpan & Terapkan
+            <div class="flex flex-wrap items-center justify-between p-3.5 sm:p-4 border-t border-slate-800 bg-slate-950/70 shrink-0 gap-2">
+                <div class="flex items-center gap-2">
+                    <button onclick="downloadJsonFile()" title="Unduh file monitoring.json yang siap di-commit ke GitHub" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs flex items-center gap-1.5 border border-slate-700 transition-colors">
+                        <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span>Unduh JSON</span>
+                    </button>
+                    <button onclick="copyJsonToClipboard()" title="Salin seluruh data JSON ke clipboard" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs flex items-center gap-1.5 border border-slate-700 transition-colors">
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                        <span>Salin JSON</span>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button onclick="closeInputModal()" class="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition-colors">Batal</button>
+                    <button onclick="saveModalData()" class="px-5 py-1.5 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 font-bold text-white text-xs shadow-lg shadow-emerald-600/30 flex items-center gap-1.5 transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Simpan & Terapkan di Layar</span>
                     </button>
                 </div>
             </div>
@@ -881,17 +978,14 @@
                     allMonitoringData = { ...jsonData, ...allMonitoringData };
                 }
 
-                // Ambil data untuk tanggal aktif
-                let dataForDate = allMonitoringData[activeDate];
-                if (!dataForDate) {
-                    // Jika belum ada data untuk tanggal ini, ambil data default terdekat
-                    const keys = Object.keys(allMonitoringData);
-                    if (keys.length > 0) {
-                        dataForDate = allMonitoringData[keys[0]];
-                    }
+                // Pastikan jika activeDate tidak ada, ambil tanggal terbaru (reverse sorted)
+                const sortedDates = Object.keys(allMonitoringData).sort().reverse();
+                if (!allMonitoringData[activeDate] && sortedDates.length > 0) {
+                    activeDate = sortedDates[0];
                 }
+                document.getElementById('datePicker').value = activeDate;
 
-                renderDashboard(dataForDate);
+                renderDashboard(allMonitoringData[activeDate]);
             } catch (err) {
                 console.warn('Menggunakan fallback data lokal:', err);
                 if (allMonitoringData[activeDate]) {
@@ -906,30 +1000,221 @@
             loadDashboardData();
         });
 
-        // Modal Input Logic
-        function openInputModal() {
-            document.getElementById('modalDate').value = activeDate;
-            const cur = allMonitoringData[activeDate] || Object.values(allMonitoringData)[0] || {};
+        // Tab Switching in Modal
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.className = 'tab-btn px-3 py-2 rounded-t-lg border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center gap-1.5 transition-colors';
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+            const btnId = tabId.replace('tab-', 'tab-btn-');
+            const activeBtn = document.getElementById(btnId);
+            if (activeBtn) {
+                activeBtn.className = 'tab-btn px-3 py-2 rounded-t-lg border-b-2 border-indigo-500 text-indigo-400 bg-slate-800/60 flex items-center gap-1.5';
+            }
+        }
+
+        // Helper Cost Modal Updater
+        function onCostInput(key) {
+            const plan = parseFloat(document.getElementById(`m_cost_${key}_plan`).value) || 0;
+            const actual = parseFloat(document.getElementById(`m_cost_${key}_actual`).value) || 0;
+            const pct = plan > 0 ? Math.round((actual / plan) * 1000) / 10 : 0;
+            const remaining = plan - actual;
+
+            const badge = document.getElementById(`m_cost_${key}_badge`);
+            if (badge) {
+                badge.innerText = `${pct}%`;
+                badge.className = `text-[10px] font-bold px-1.5 py-0.5 rounded-full ${pct >= 100 ? 'bg-rose-500/20 text-rose-300' : (pct >= 85 ? 'bg-amber-500/20 text-amber-300' : 'bg-blue-500/20 text-blue-300')}`;
+            }
+
+            const remSpan = document.getElementById(`m_cost_${key}_rem`);
+            if (remSpan) {
+                remSpan.innerText = remaining < 0 ? `-Rp ${formatRupiah(Math.abs(remaining))}` : `Rp ${formatRupiah(remaining)}`;
+                remSpan.className = `font-bold ${remaining < 0 ? 'text-rose-400' : 'text-emerald-400'}`;
+            }
+        }
+
+        // Populate Modal Fields
+        function populateModal() {
+            const curDate = document.getElementById('modalDate').value || activeDate;
+            const cur = allMonitoringData[curDate] || allMonitoringData[activeDate] || Object.values(allMonitoringData)[0] || {};
             const t = cur.transport || {};
             const c = cur.costs || {};
+            const issues = cur.dorcatIssues || [];
 
-            document.getElementById('m_pa_bus').value = t.pa_bus || 99.0;
-            document.getElementById('m_pa_lv').value = t.pa_lv || 98.0;
-            document.getElementById('m_cov').value = t.coverage_pengantaran || 100.0;
-            document.getElementById('m_fr_bus').value = t.fuel_ratio_bus || 3.65;
-            document.getElementById('m_fr_lv').value = t.fuel_ratio_lv || 7.40;
-            document.getElementById('m_ready_lv').value = t.unit_ready_lv || 38;
+            // 1. Populate Costs
+            const costContainer = document.getElementById('modal-cost-container');
+            const costCategories = [
+                { key: 'tiket', label: 'Cost Tiket - 2351' },
+                { key: 'npe', label: 'Cost NPE - 2402' },
+                { key: 'office', label: 'Office Expense - 2403' },
+                { key: 'mess', label: 'Mess Expense - 2405' },
+                { key: 'building', label: 'Cost Building Maint - 2410' }
+            ];
+
+            costContainer.innerHTML = costCategories.map(cat => {
+                const item = c[cat.key] || { plan: 0, actual: 0, notes: '' };
+                const pct = item.plan > 0 ? Math.round((item.actual / item.plan) * 1000) / 10 : 0;
+                const rem = item.plan - item.actual;
+
+                return `
+                    <div class="bg-slate-800/60 p-3 rounded-xl border border-slate-700/80 space-y-2">
+                        <div class="flex items-center justify-between pb-1.5 border-b border-slate-700">
+                            <span class="font-bold text-slate-100 text-xs">${cat.label}</span>
+                            <span id="m_cost_${cat.key}_badge" class="text-[10px] font-bold px-1.5 py-0.5 rounded-full ${pct >= 100 ? 'bg-rose-500/20 text-rose-300' : 'bg-blue-500/20 text-blue-300'}">
+                                ${pct}%
+                            </span>
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-[10px] mb-0.5">Budget Plan (Rp):</label>
+                            <input type="number" id="m_cost_${cat.key}_plan" value="${item.plan || 0}" oninput="onCostInput('${cat.key}')" class="w-full bg-slate-900 border border-slate-700 text-slate-200 rounded p-1.5 font-mono-num text-xs focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-[10px] mb-0.5">Realisasi Aktual (Rp):</label>
+                            <input type="number" id="m_cost_${cat.key}_actual" value="${item.actual || 0}" oninput="onCostInput('${cat.key}')" class="w-full bg-slate-900 border border-slate-700 text-cyan-400 font-mono-num font-bold rounded p-1.5 text-xs focus:outline-none">
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] pt-1">
+                            <span class="text-slate-400">Sisa:</span>
+                            <span id="m_cost_${cat.key}_rem" class="font-bold ${rem < 0 ? 'text-rose-400' : 'text-emerald-400'}">
+                                ${rem < 0 ? `-Rp ${formatRupiah(Math.abs(rem))}` : `Rp ${formatRupiah(rem)}`}
+                            </span>
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-[10px] mb-0.5">Catatan / Rincian:</label>
+                            <input type="text" id="m_cost_${cat.key}_notes" value="${item.notes || ''}" placeholder="Catatan biaya..." class="w-full bg-slate-900 border border-slate-700 text-slate-300 rounded p-1 text-[11px] focus:outline-none">
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // 2. Populate Transport
+            document.getElementById('m_pa_bus').value = t.pa_bus ?? 96.0;
+            document.getElementById('m_pa_lv').value = t.pa_lv ?? 94.5;
+            document.getElementById('m_cov').value = t.coverage_pengantaran ?? 98.2;
+            document.getElementById('m_fr_bus').value = t.fuel_ratio_bus ?? 3.65;
+            document.getElementById('m_fr_lv').value = t.fuel_ratio_lv ?? 7.40;
+            document.getElementById('m_atr_lv').value = t.atr_lv ?? 88.2;
+
+            document.getElementById('m_ready_lv').value = t.unit_ready_lv ?? 38;
+            document.getElementById('m_breakdown_lv').value = t.unit_breakdown_lv ?? 2;
+            document.getElementById('m_ready_bus').value = t.unit_ready_bus ?? 12;
+            document.getElementById('m_breakdown_bus').value = t.unit_breakdown_bus ?? 0;
             document.getElementById('m_notes_transport').value = t.notes || '';
 
+            // 3. Populate Dorcat
+            document.getElementById('modal-dorcat-count').innerText = issues.length;
+            renderDorcatModalList(issues);
+
+            // 4. Populate Hot Issues
             document.getElementById('m_mep_issue').value = cur.mepHotIssue || '';
             document.getElementById('m_sipil_issue').value = cur.sipilHotIssue || '';
+        }
 
-            document.getElementById('m_cost_tiket').value = c.tiket?.actual || 0;
-            document.getElementById('m_cost_npe').value = c.npe?.actual || 0;
-            document.getElementById('m_cost_office').value = c.office?.actual || 0;
-            document.getElementById('m_cost_mess').value = c.mess?.actual || 0;
-            document.getElementById('m_cost_building').value = c.building?.actual || 0;
+        // Render Dorcat Issues in Modal
+        let modalIssuesData = [];
+        function renderDorcatModalList(issues) {
+            modalIssuesData = JSON.parse(JSON.stringify(issues));
+            const container = document.getElementById('modal-dorcat-list');
+            if (modalIssuesData.length === 0) {
+                container.innerHTML = '<div class="p-4 text-center text-slate-400 text-xs bg-slate-800/40 rounded-xl">Belum ada isu terdaftar. Klik tombol "+ Tambah Isu Baru" di atas.</div>';
+                return;
+            }
 
+            container.innerHTML = modalIssuesData.map((iss, idx) => `
+                <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-700/80 space-y-2">
+                    <div class="flex items-start justify-between gap-2">
+                        <div class="flex-1">
+                            <label class="block text-slate-400 text-[10px] mb-0.5">Judul Isu:</label>
+                            <input type="text" id="iss_title_${idx}" value="${iss.issue_title || ''}" placeholder="Judul isu kritis..." class="w-full bg-slate-900 border border-slate-700 text-white font-semibold rounded p-1.5 text-xs focus:outline-none focus:border-amber-500">
+                        </div>
+                        <button onclick="removeDorcatIssueRow(${idx})" title="Hapus isu ini" class="mt-4 p-1.5 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs">
+                        <div>
+                            <label class="block text-slate-400 text-[10px] mb-0.5">PIC / Penanggung Jawab:</label>
+                            <input type="text" id="iss_pic_${idx}" value="${iss.pic_name || ''}" placeholder="Nama PIC..." class="w-full bg-slate-900 border border-slate-700 text-slate-200 rounded p-1.5 text-xs focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-[10px] mb-0.5">Progres (${iss.percentage || 0}%):</label>
+                            <input type="number" min="0" max="100" id="iss_pct_${idx}" value="${iss.percentage || 0}" class="w-full bg-slate-900 border border-slate-700 text-amber-400 font-bold rounded p-1.5 text-xs focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-[10px] mb-0.5">Prioritas:</label>
+                            <select id="iss_prio_${idx}" class="w-full bg-slate-900 border border-slate-700 text-slate-200 rounded p-1.5 text-xs focus:outline-none">
+                                <option value="critical" ${iss.priority === 'critical' ? 'selected' : ''}>Critical</option>
+                                <option value="high" ${iss.priority === 'high' ? 'selected' : ''}>High</option>
+                                <option value="normal" ${iss.priority === 'normal' ? 'selected' : ''}>Normal</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-[10px] mb-0.5">Status:</label>
+                            <select id="iss_status_${idx}" class="w-full bg-slate-900 border border-slate-700 text-slate-200 rounded p-1.5 text-xs focus:outline-none">
+                                <option value="open" ${iss.status === 'open' ? 'selected' : ''}>Open</option>
+                                <option value="in_progress" ${iss.status === 'in_progress' ? 'selected' : ''}>On Progress</option>
+                                <option value="resolved" ${iss.status === 'resolved' ? 'selected' : ''}>Selesai</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-400 text-[10px] mb-0.5">Deskripsi / Rencana Tindakan:</label>
+                        <input type="text" id="iss_desc_${idx}" value="${iss.description || ''}" placeholder="Keterangan singkat tindakan..." class="w-full bg-slate-900 border border-slate-700 text-slate-300 rounded p-1 text-[11px] focus:outline-none">
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addDorcatIssueRow() {
+            syncDorcatModalData();
+            modalIssuesData.unshift({
+                id: Date.now(),
+                issue_title: 'Isu Operasional Baru',
+                description: '',
+                pic_name: 'Staf GS',
+                percentage: 0,
+                priority: 'high',
+                status: 'open'
+            });
+            document.getElementById('modal-dorcat-count').innerText = modalIssuesData.length;
+            renderDorcatModalList(modalIssuesData);
+        }
+
+        function removeDorcatIssueRow(idx) {
+            syncDorcatModalData();
+            modalIssuesData.splice(idx, 1);
+            document.getElementById('modal-dorcat-count').innerText = modalIssuesData.length;
+            renderDorcatModalList(modalIssuesData);
+        }
+
+        function syncDorcatModalData() {
+            modalIssuesData.forEach((iss, idx) => {
+                const titleEl = document.getElementById(`iss_title_${idx}`);
+                if (titleEl) iss.issue_title = titleEl.value;
+                const picEl = document.getElementById(`iss_pic_${idx}`);
+                if (picEl) iss.pic_name = picEl.value;
+                const pctEl = document.getElementById(`iss_pct_${idx}`);
+                if (pctEl) iss.percentage = parseInt(pctEl.value) || 0;
+                const prioEl = document.getElementById(`iss_prio_${idx}`);
+                if (prioEl) iss.priority = prioEl.value;
+                const stEl = document.getElementById(`iss_status_${idx}`);
+                if (stEl) iss.status = stEl.value;
+                const descEl = document.getElementById(`iss_desc_${idx}`);
+                if (descEl) iss.description = descEl.value;
+            });
+        }
+
+        function onModalDateChange() {
+            populateModal();
+        }
+
+        function openInputModal() {
+            document.getElementById('modalDate').value = activeDate;
+            populateModal();
+            switchTab('tab-cost');
             document.getElementById('inputModal').classList.remove('hidden');
         }
 
@@ -942,6 +1227,35 @@
             const base = JSON.parse(JSON.stringify(allMonitoringData[activeDate] || Object.values(allMonitoringData)[0] || {}));
 
             base.selectedDate = date;
+
+            // 1. Save Costs
+            if (!base.costs) base.costs = {};
+            let totalP = 0;
+            let totalA = 0;
+            ['tiket', 'npe', 'office', 'mess', 'building'].forEach(k => {
+                const plan = parseFloat(document.getElementById(`m_cost_${k}_plan`)?.value) || 0;
+                const actual = parseFloat(document.getElementById(`m_cost_${k}_actual`)?.value) || 0;
+                const notes = document.getElementById(`m_cost_${k}_notes`)?.value || '';
+                const pct = plan > 0 ? Math.round((actual / plan) * 1000) / 10 : 0;
+                const rem = plan - actual;
+
+                totalP += plan;
+                totalA += actual;
+
+                base.costs[k] = {
+                    ...(base.costs[k] || {}),
+                    plan: plan,
+                    actual: actual,
+                    percentage: pct,
+                    remaining: rem,
+                    notes: notes
+                };
+            });
+            base.totalCostPlan = totalP;
+            base.totalCostActual = totalA;
+            base.totalCostPercentage = totalP > 0 ? Math.round((totalA / totalP) * 1000) / 10 : 0;
+
+            // 2. Save Transport
             base.transport = {
                 ...(base.transport || {}),
                 pa_bus: parseFloat(document.getElementById('m_pa_bus').value) || 0,
@@ -949,29 +1263,29 @@
                 coverage_pengantaran: parseFloat(document.getElementById('m_cov').value) || 0,
                 fuel_ratio_bus: parseFloat(document.getElementById('m_fr_bus').value) || 0,
                 fuel_ratio_lv: parseFloat(document.getElementById('m_fr_lv').value) || 0,
+                atr_lv: parseFloat(document.getElementById('m_atr_lv').value) || 0,
                 unit_ready_lv: parseInt(document.getElementById('m_ready_lv').value) || 0,
+                unit_breakdown_lv: parseInt(document.getElementById('m_breakdown_lv').value) || 0,
+                unit_ready_bus: parseInt(document.getElementById('m_ready_bus').value) || 0,
+                unit_breakdown_bus: parseInt(document.getElementById('m_breakdown_bus').value) || 0,
                 notes: document.getElementById('m_notes_transport').value
             };
 
+            // 3. Save Dorcat Issues
+            syncDorcatModalData();
+            base.dorcatIssues = modalIssuesData;
+            base.dorcatStats = {
+                total: modalIssuesData.length,
+                open_count: modalIssuesData.filter(i => i.status === 'open').length,
+                progress_count: modalIssuesData.filter(i => i.status === 'in_progress').length,
+                resolved_count: modalIssuesData.filter(i => i.status === 'resolved').length
+            };
+
+            // 4. Save Hot Issues
             base.mepHotIssue = document.getElementById('m_mep_issue').value;
             base.sipilHotIssue = document.getElementById('m_sipil_issue').value;
 
-            // Update aktual biaya
-            if (base.costs) {
-                const updateCost = (key, inputId) => {
-                    if (base.costs[key]) {
-                        base.costs[key].actual = parseFloat(document.getElementById(inputId).value) || 0;
-                        base.costs[key].remaining = base.costs[key].plan - base.costs[key].actual;
-                        base.costs[key].percentage = base.costs[key].plan > 0 ? Math.round((base.costs[key].actual / base.costs[key].plan) * 1000) / 10 : 0;
-                    }
-                };
-                updateCost('tiket', 'm_cost_tiket');
-                updateCost('npe', 'm_cost_npe');
-                updateCost('office', 'm_cost_office');
-                updateCost('mess', 'm_cost_mess');
-                updateCost('building', 'm_cost_building');
-            }
-
+            // Simpan ke storage dan state
             allMonitoringData[date] = base;
             localStorage.setItem('monitoringgsmtbu_data', JSON.stringify(allMonitoringData));
 
@@ -979,7 +1293,7 @@
             document.getElementById('datePicker').value = date;
             renderDashboard(base);
             closeInputModal();
-            alert('Data berhasil diperbarui di layar! Untuk membagikan permanen ke seluruh kantor, Anda juga dapat mengklik "Unduh File JSON" dan commit ke repository GitHub.');
+            alert('Sukses! Seluruh data telah diperbarui di layar monitoring Anda. Klik "Unduh JSON" atau "Salin JSON" di modal bila ingin menyimpan perubahan secara permanen di GitHub.');
         }
 
         function downloadJsonFile() {
@@ -990,6 +1304,14 @@
             document.body.appendChild(downloadAnchor);
             downloadAnchor.click();
             downloadAnchor.remove();
+        }
+
+        function copyJsonToClipboard() {
+            navigator.clipboard.writeText(JSON.stringify(allMonitoringData, null, 4)).then(() => {
+                alert('Seluruh data JSON telah disalin ke clipboard! Anda dapat langsung paste ke file docs/data/monitoring.json di GitHub.');
+            }).catch(err => {
+                alert('Gagal menyalin otomatis. Silakan gunakan tombol Unduh JSON.');
+            });
         }
 
         // On Load

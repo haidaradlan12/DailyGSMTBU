@@ -153,7 +153,7 @@
                     "in_progress": 3,
                     "completed": 14,
                     "total": 23,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 },
                 "mayor": {
                     "label": "Mayor",
@@ -161,7 +161,7 @@
                     "in_progress": 0,
                     "completed": 1,
                     "total": 5,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 },
                 "project": {
                     "label": "Project",
@@ -169,7 +169,7 @@
                     "in_progress": 0,
                     "completed": 0,
                     "total": 0,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 },
                 "unidentified": {
                     "label": "Belum Diidentifikasi",
@@ -177,7 +177,7 @@
                     "in_progress": 0,
                     "completed": 0,
                     "total": 0,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 }
             },
             "totals": {
@@ -197,7 +197,7 @@
                     "in_progress": 0,
                     "completed": 0,
                     "total": 0,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 },
                 "mayor": {
                     "label": "Mayor",
@@ -205,7 +205,7 @@
                     "in_progress": 0,
                     "completed": 0,
                     "total": 0,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 },
                 "project": {
                     "label": "Project",
@@ -213,7 +213,7 @@
                     "in_progress": 0,
                     "completed": 0,
                     "total": 0,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 },
                 "unidentified": {
                     "label": "Belum Diidentifikasi",
@@ -221,7 +221,7 @@
                     "in_progress": 0,
                     "completed": 0,
                     "total": 1,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 }
             },
             "totals": {
@@ -240,11 +240,11 @@
             "username": null,
             "password": null,
             "auto_sync": true,
-            "last_synced_at": "2026-10-27T15:09:54.000000Z",
+            "last_synced_at": "2026-10-27T15:37:31.000000Z",
             "last_sync_status": "success",
             "last_sync_message": "Berhasil sinkronisasi langsung 29 tiket dari https://umsticket.artyc.id",
             "created_at": "2026-10-27T03:37:44.000000Z",
-            "updated_at": "2026-10-27T15:09:54.000000Z"
+            "updated_at": "2026-10-27T15:37:31.000000Z"
         },
         "isConnected": true
     },
@@ -409,7 +409,7 @@
                     "in_progress": 0,
                     "completed": 0,
                     "total": 0,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 }
             },
             "totals": {
@@ -453,7 +453,7 @@
                     "in_progress": 0,
                     "completed": 0,
                     "total": 1,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 }
             },
             "totals": {
@@ -472,11 +472,11 @@
             "username": null,
             "password": null,
             "auto_sync": true,
-            "last_synced_at": "2026-10-27T15:09:54.000000Z",
+            "last_synced_at": "2026-10-27T15:37:31.000000Z",
             "last_sync_status": "success",
             "last_sync_message": "Berhasil sinkronisasi langsung 29 tiket dari https://umsticket.artyc.id",
             "created_at": "2026-10-27T03:37:44.000000Z",
-            "updated_at": "2026-10-27T15:09:54.000000Z"
+            "updated_at": "2026-10-27T15:37:31.000000Z"
         },
         "isConnected": true
     },
@@ -641,7 +641,7 @@
                     "in_progress": 0,
                     "completed": 0,
                     "total": 0,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 }
             },
             "totals": {
@@ -685,7 +685,7 @@
                     "in_progress": 0,
                     "completed": 0,
                     "total": 1,
-                    "last_synced_at": "0 seconds ago"
+                    "last_synced_at": "28 seconds ago"
                 }
             },
             "totals": {
@@ -704,11 +704,939 @@
             "username": null,
             "password": null,
             "auto_sync": true,
-            "last_synced_at": "2026-10-27T15:09:54.000000Z",
+            "last_synced_at": "2026-10-27T15:37:31.000000Z",
             "last_sync_status": "success",
             "last_sync_message": "Berhasil sinkronisasi langsung 29 tiket dari https://umsticket.artyc.id",
             "created_at": "2026-10-27T03:37:44.000000Z",
-            "updated_at": "2026-10-27T15:09:54.000000Z"
+            "updated_at": "2026-10-27T15:37:31.000000Z"
+        },
+        "isConnected": true
+    },
+    "2026-10-24": {
+        "selectedDate": "2026-10-24",
+        "costs": {
+            "tiket": {
+                "key": "tiket",
+                "label": "Cost Tiket - 2351",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "npe": {
+                "key": "npe",
+                "label": "Cost NPE - 2402",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "office": {
+                "key": "office",
+                "label": "Office Expense - 2403",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "mess": {
+                "key": "mess",
+                "label": "Mess Expense - 2405",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "building": {
+                "key": "building",
+                "label": "Cost Building Maint - 2410",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            }
+        },
+        "totalCostPlan": 0,
+        "totalCostActual": 0,
+        "totalCostPercentage": 0,
+        "dorcatIssues": [
+            {
+                "id": 13,
+                "date": "2026-10-27",
+                "issue_title": "Overhaul Kompresor Pendingin Gedung Admin MTBU",
+                "description": "Penggantian sparepart valve dan re-charging refrigerant R410A.",
+                "percentage": 85,
+                "status": "in_progress",
+                "priority": "high",
+                "pic_name": "Budi Santoso",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 14,
+                "date": "2026-10-27",
+                "issue_title": "Peningkatan Kualitas Filter Water Treatment Plant Mess GS",
+                "description": "Backwash dan penggantian media silika serta karbon aktif.",
+                "percentage": 95,
+                "status": "in_progress",
+                "priority": "critical",
+                "pic_name": "Eko Prasetyo",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 11,
+                "date": "2026-10-27",
+                "issue_title": "Persiapan Perpindahan Mess",
+                "description": null,
+                "percentage": 75,
+                "status": "open",
+                "priority": "high",
+                "pic_name": "Dedo Nico",
+                "updated_by": 1,
+                "created_at": "2026-10-27T04:42:55.000000Z",
+                "updated_at": "2026-10-27T07:04:50.000000Z"
+            },
+            {
+                "id": 15,
+                "date": "2026-10-27",
+                "issue_title": "Preventive Maintenance Genset Standby 250 kVA GS",
+                "description": "Pengecekan accu starter, filter solar, dan load test mingguan.",
+                "percentage": 40,
+                "status": "open",
+                "priority": "high",
+                "pic_name": "Hendra Wijaya",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 16,
+                "date": "2026-10-27",
+                "issue_title": "Perbaikan Pintu Otomatis Barrier Gate Utama",
+                "description": "Penggantian motor servo dan integrasi sensor loop detector.",
+                "percentage": 100,
+                "status": "resolved",
+                "priority": "normal",
+                "pic_name": "Rahmat Hidayat",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            }
+        ],
+        "dorcatStats": {
+            "total": 5,
+            "avg_percentage": 79,
+            "open_count": 2,
+            "progress_count": 2,
+            "resolved_count": 1
+        },
+        "transport": null,
+        "mepOrders": {
+            "department": "mep",
+            "label": "MEP & Instrument",
+            "rows": {
+                "minor": {
+                    "label": "Minor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "mayor": {
+                    "label": "Mayor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "project": {
+                    "label": "Project",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "unidentified": {
+                    "label": "Belum Diidentifikasi",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "28 seconds ago"
+                }
+            },
+            "totals": {
+                "waiting_schedule": 0,
+                "in_progress": 0,
+                "completed": 0,
+                "overall": 0
+            }
+        },
+        "sipilOrders": {
+            "department": "sipil",
+            "label": "Building Const",
+            "rows": {
+                "minor": {
+                    "label": "Minor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "mayor": {
+                    "label": "Mayor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "project": {
+                    "label": "Project",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "unidentified": {
+                    "label": "Belum Diidentifikasi",
+                    "waiting_schedule": 1,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 1,
+                    "last_synced_at": "28 seconds ago"
+                }
+            },
+            "totals": {
+                "waiting_schedule": 1,
+                "in_progress": 0,
+                "completed": 0,
+                "overall": 1
+            }
+        },
+        "mepHotIssue": "Perbaikan panel ATS genset mess A dalam proses investigasi teknisi.",
+        "sipilHotIssue": "Perbaikan atap shelter bus & pengecoran drainase workshop tahap 2.",
+        "setting": {
+            "id": 1,
+            "endpoint_url": "https://umsticket.artyc.id",
+            "api_key": null,
+            "username": null,
+            "password": null,
+            "auto_sync": true,
+            "last_synced_at": "2026-10-27T15:37:31.000000Z",
+            "last_sync_status": "success",
+            "last_sync_message": "Berhasil sinkronisasi langsung 29 tiket dari https://umsticket.artyc.id",
+            "created_at": "2026-10-27T03:37:44.000000Z",
+            "updated_at": "2026-10-27T15:37:31.000000Z"
+        },
+        "isConnected": true
+    },
+    "2026-10-23": {
+        "selectedDate": "2026-10-23",
+        "costs": {
+            "tiket": {
+                "key": "tiket",
+                "label": "Cost Tiket - 2351",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "npe": {
+                "key": "npe",
+                "label": "Cost NPE - 2402",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "office": {
+                "key": "office",
+                "label": "Office Expense - 2403",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "mess": {
+                "key": "mess",
+                "label": "Mess Expense - 2405",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "building": {
+                "key": "building",
+                "label": "Cost Building Maint - 2410",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            }
+        },
+        "totalCostPlan": 0,
+        "totalCostActual": 0,
+        "totalCostPercentage": 0,
+        "dorcatIssues": [
+            {
+                "id": 13,
+                "date": "2026-10-27",
+                "issue_title": "Overhaul Kompresor Pendingin Gedung Admin MTBU",
+                "description": "Penggantian sparepart valve dan re-charging refrigerant R410A.",
+                "percentage": 85,
+                "status": "in_progress",
+                "priority": "high",
+                "pic_name": "Budi Santoso",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 14,
+                "date": "2026-10-27",
+                "issue_title": "Peningkatan Kualitas Filter Water Treatment Plant Mess GS",
+                "description": "Backwash dan penggantian media silika serta karbon aktif.",
+                "percentage": 95,
+                "status": "in_progress",
+                "priority": "critical",
+                "pic_name": "Eko Prasetyo",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 11,
+                "date": "2026-10-27",
+                "issue_title": "Persiapan Perpindahan Mess",
+                "description": null,
+                "percentage": 75,
+                "status": "open",
+                "priority": "high",
+                "pic_name": "Dedo Nico",
+                "updated_by": 1,
+                "created_at": "2026-10-27T04:42:55.000000Z",
+                "updated_at": "2026-10-27T07:04:50.000000Z"
+            },
+            {
+                "id": 15,
+                "date": "2026-10-27",
+                "issue_title": "Preventive Maintenance Genset Standby 250 kVA GS",
+                "description": "Pengecekan accu starter, filter solar, dan load test mingguan.",
+                "percentage": 40,
+                "status": "open",
+                "priority": "high",
+                "pic_name": "Hendra Wijaya",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 16,
+                "date": "2026-10-27",
+                "issue_title": "Perbaikan Pintu Otomatis Barrier Gate Utama",
+                "description": "Penggantian motor servo dan integrasi sensor loop detector.",
+                "percentage": 100,
+                "status": "resolved",
+                "priority": "normal",
+                "pic_name": "Rahmat Hidayat",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            }
+        ],
+        "dorcatStats": {
+            "total": 5,
+            "avg_percentage": 79,
+            "open_count": 2,
+            "progress_count": 2,
+            "resolved_count": 1
+        },
+        "transport": null,
+        "mepOrders": {
+            "department": "mep",
+            "label": "MEP & Instrument",
+            "rows": {
+                "minor": {
+                    "label": "Minor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "mayor": {
+                    "label": "Mayor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "project": {
+                    "label": "Project",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "unidentified": {
+                    "label": "Belum Diidentifikasi",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "28 seconds ago"
+                }
+            },
+            "totals": {
+                "waiting_schedule": 0,
+                "in_progress": 0,
+                "completed": 0,
+                "overall": 0
+            }
+        },
+        "sipilOrders": {
+            "department": "sipil",
+            "label": "Building Const",
+            "rows": {
+                "minor": {
+                    "label": "Minor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "mayor": {
+                    "label": "Mayor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "project": {
+                    "label": "Project",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "unidentified": {
+                    "label": "Belum Diidentifikasi",
+                    "waiting_schedule": 1,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 1,
+                    "last_synced_at": "28 seconds ago"
+                }
+            },
+            "totals": {
+                "waiting_schedule": 1,
+                "in_progress": 0,
+                "completed": 0,
+                "overall": 1
+            }
+        },
+        "mepHotIssue": "Perbaikan panel ATS genset mess A dalam proses investigasi teknisi.",
+        "sipilHotIssue": "Perbaikan atap shelter bus & pengecoran drainase workshop tahap 2.",
+        "setting": {
+            "id": 1,
+            "endpoint_url": "https://umsticket.artyc.id",
+            "api_key": null,
+            "username": null,
+            "password": null,
+            "auto_sync": true,
+            "last_synced_at": "2026-10-27T15:37:31.000000Z",
+            "last_sync_status": "success",
+            "last_sync_message": "Berhasil sinkronisasi langsung 29 tiket dari https://umsticket.artyc.id",
+            "created_at": "2026-10-27T03:37:44.000000Z",
+            "updated_at": "2026-10-27T15:37:31.000000Z"
+        },
+        "isConnected": true
+    },
+    "2026-10-22": {
+        "selectedDate": "2026-10-22",
+        "costs": {
+            "tiket": {
+                "key": "tiket",
+                "label": "Cost Tiket - 2351",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "npe": {
+                "key": "npe",
+                "label": "Cost NPE - 2402",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "office": {
+                "key": "office",
+                "label": "Office Expense - 2403",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "mess": {
+                "key": "mess",
+                "label": "Mess Expense - 2405",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "building": {
+                "key": "building",
+                "label": "Cost Building Maint - 2410",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            }
+        },
+        "totalCostPlan": 0,
+        "totalCostActual": 0,
+        "totalCostPercentage": 0,
+        "dorcatIssues": [
+            {
+                "id": 13,
+                "date": "2026-10-27",
+                "issue_title": "Overhaul Kompresor Pendingin Gedung Admin MTBU",
+                "description": "Penggantian sparepart valve dan re-charging refrigerant R410A.",
+                "percentage": 85,
+                "status": "in_progress",
+                "priority": "high",
+                "pic_name": "Budi Santoso",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 14,
+                "date": "2026-10-27",
+                "issue_title": "Peningkatan Kualitas Filter Water Treatment Plant Mess GS",
+                "description": "Backwash dan penggantian media silika serta karbon aktif.",
+                "percentage": 95,
+                "status": "in_progress",
+                "priority": "critical",
+                "pic_name": "Eko Prasetyo",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 11,
+                "date": "2026-10-27",
+                "issue_title": "Persiapan Perpindahan Mess",
+                "description": null,
+                "percentage": 75,
+                "status": "open",
+                "priority": "high",
+                "pic_name": "Dedo Nico",
+                "updated_by": 1,
+                "created_at": "2026-10-27T04:42:55.000000Z",
+                "updated_at": "2026-10-27T07:04:50.000000Z"
+            },
+            {
+                "id": 15,
+                "date": "2026-10-27",
+                "issue_title": "Preventive Maintenance Genset Standby 250 kVA GS",
+                "description": "Pengecekan accu starter, filter solar, dan load test mingguan.",
+                "percentage": 40,
+                "status": "open",
+                "priority": "high",
+                "pic_name": "Hendra Wijaya",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 16,
+                "date": "2026-10-27",
+                "issue_title": "Perbaikan Pintu Otomatis Barrier Gate Utama",
+                "description": "Penggantian motor servo dan integrasi sensor loop detector.",
+                "percentage": 100,
+                "status": "resolved",
+                "priority": "normal",
+                "pic_name": "Rahmat Hidayat",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            }
+        ],
+        "dorcatStats": {
+            "total": 5,
+            "avg_percentage": 79,
+            "open_count": 2,
+            "progress_count": 2,
+            "resolved_count": 1
+        },
+        "transport": null,
+        "mepOrders": {
+            "department": "mep",
+            "label": "MEP & Instrument",
+            "rows": {
+                "minor": {
+                    "label": "Minor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "mayor": {
+                    "label": "Mayor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "project": {
+                    "label": "Project",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "unidentified": {
+                    "label": "Belum Diidentifikasi",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "28 seconds ago"
+                }
+            },
+            "totals": {
+                "waiting_schedule": 0,
+                "in_progress": 0,
+                "completed": 0,
+                "overall": 0
+            }
+        },
+        "sipilOrders": {
+            "department": "sipil",
+            "label": "Building Const",
+            "rows": {
+                "minor": {
+                    "label": "Minor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "mayor": {
+                    "label": "Mayor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "project": {
+                    "label": "Project",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "unidentified": {
+                    "label": "Belum Diidentifikasi",
+                    "waiting_schedule": 1,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 1,
+                    "last_synced_at": "28 seconds ago"
+                }
+            },
+            "totals": {
+                "waiting_schedule": 1,
+                "in_progress": 0,
+                "completed": 0,
+                "overall": 1
+            }
+        },
+        "mepHotIssue": "Perbaikan panel ATS genset mess A dalam proses investigasi teknisi.",
+        "sipilHotIssue": "Perbaikan atap shelter bus & pengecoran drainase workshop tahap 2.",
+        "setting": {
+            "id": 1,
+            "endpoint_url": "https://umsticket.artyc.id",
+            "api_key": null,
+            "username": null,
+            "password": null,
+            "auto_sync": true,
+            "last_synced_at": "2026-10-27T15:37:31.000000Z",
+            "last_sync_status": "success",
+            "last_sync_message": "Berhasil sinkronisasi langsung 29 tiket dari https://umsticket.artyc.id",
+            "created_at": "2026-10-27T03:37:44.000000Z",
+            "updated_at": "2026-10-27T15:37:31.000000Z"
+        },
+        "isConnected": true
+    },
+    "2026-10-21": {
+        "selectedDate": "2026-10-21",
+        "costs": {
+            "tiket": {
+                "key": "tiket",
+                "label": "Cost Tiket - 2351",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "npe": {
+                "key": "npe",
+                "label": "Cost NPE - 2402",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "office": {
+                "key": "office",
+                "label": "Office Expense - 2403",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "mess": {
+                "key": "mess",
+                "label": "Mess Expense - 2405",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            },
+            "building": {
+                "key": "building",
+                "label": "Cost Building Maint - 2410",
+                "plan": 0,
+                "actual": 0,
+                "percentage": 0,
+                "remaining": 0,
+                "notes": ""
+            }
+        },
+        "totalCostPlan": 0,
+        "totalCostActual": 0,
+        "totalCostPercentage": 0,
+        "dorcatIssues": [
+            {
+                "id": 13,
+                "date": "2026-10-27",
+                "issue_title": "Overhaul Kompresor Pendingin Gedung Admin MTBU",
+                "description": "Penggantian sparepart valve dan re-charging refrigerant R410A.",
+                "percentage": 85,
+                "status": "in_progress",
+                "priority": "high",
+                "pic_name": "Budi Santoso",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 14,
+                "date": "2026-10-27",
+                "issue_title": "Peningkatan Kualitas Filter Water Treatment Plant Mess GS",
+                "description": "Backwash dan penggantian media silika serta karbon aktif.",
+                "percentage": 95,
+                "status": "in_progress",
+                "priority": "critical",
+                "pic_name": "Eko Prasetyo",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 11,
+                "date": "2026-10-27",
+                "issue_title": "Persiapan Perpindahan Mess",
+                "description": null,
+                "percentage": 75,
+                "status": "open",
+                "priority": "high",
+                "pic_name": "Dedo Nico",
+                "updated_by": 1,
+                "created_at": "2026-10-27T04:42:55.000000Z",
+                "updated_at": "2026-10-27T07:04:50.000000Z"
+            },
+            {
+                "id": 15,
+                "date": "2026-10-27",
+                "issue_title": "Preventive Maintenance Genset Standby 250 kVA GS",
+                "description": "Pengecekan accu starter, filter solar, dan load test mingguan.",
+                "percentage": 40,
+                "status": "open",
+                "priority": "high",
+                "pic_name": "Hendra Wijaya",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            },
+            {
+                "id": 16,
+                "date": "2026-10-27",
+                "issue_title": "Perbaikan Pintu Otomatis Barrier Gate Utama",
+                "description": "Penggantian motor servo dan integrasi sensor loop detector.",
+                "percentage": 100,
+                "status": "resolved",
+                "priority": "normal",
+                "pic_name": "Rahmat Hidayat",
+                "updated_by": 1,
+                "created_at": "2026-10-27T07:07:49.000000Z",
+                "updated_at": "2026-10-27T07:07:49.000000Z"
+            }
+        ],
+        "dorcatStats": {
+            "total": 5,
+            "avg_percentage": 79,
+            "open_count": 2,
+            "progress_count": 2,
+            "resolved_count": 1
+        },
+        "transport": null,
+        "mepOrders": {
+            "department": "mep",
+            "label": "MEP & Instrument",
+            "rows": {
+                "minor": {
+                    "label": "Minor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "mayor": {
+                    "label": "Mayor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "project": {
+                    "label": "Project",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "unidentified": {
+                    "label": "Belum Diidentifikasi",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "28 seconds ago"
+                }
+            },
+            "totals": {
+                "waiting_schedule": 0,
+                "in_progress": 0,
+                "completed": 0,
+                "overall": 0
+            }
+        },
+        "sipilOrders": {
+            "department": "sipil",
+            "label": "Building Const",
+            "rows": {
+                "minor": {
+                    "label": "Minor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "mayor": {
+                    "label": "Mayor",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "project": {
+                    "label": "Project",
+                    "waiting_schedule": 0,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 0,
+                    "last_synced_at": "Belum ada data"
+                },
+                "unidentified": {
+                    "label": "Belum Diidentifikasi",
+                    "waiting_schedule": 1,
+                    "in_progress": 0,
+                    "completed": 0,
+                    "total": 1,
+                    "last_synced_at": "28 seconds ago"
+                }
+            },
+            "totals": {
+                "waiting_schedule": 1,
+                "in_progress": 0,
+                "completed": 0,
+                "overall": 1
+            }
+        },
+        "mepHotIssue": "Perbaikan panel ATS genset mess A dalam proses investigasi teknisi.",
+        "sipilHotIssue": "Perbaikan atap shelter bus & pengecoran drainase workshop tahap 2.",
+        "setting": {
+            "id": 1,
+            "endpoint_url": "https://umsticket.artyc.id",
+            "api_key": null,
+            "username": null,
+            "password": null,
+            "auto_sync": true,
+            "last_synced_at": "2026-10-27T15:37:31.000000Z",
+            "last_sync_status": "success",
+            "last_sync_message": "Berhasil sinkronisasi langsung 29 tiket dari https://umsticket.artyc.id",
+            "created_at": "2026-10-27T03:37:44.000000Z",
+            "updated_at": "2026-10-27T15:37:31.000000Z"
         },
         "isConnected": true
     }
